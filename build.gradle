@@ -1,0 +1,28 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.7.RELEASE'
+}
+
+apply plugin: 'java'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'groovy'
+
+repositories {
+    jcenter()
+}
+
+jar {
+    from ('src/main/java') {
+        into 'BOOT-INF/classes'
+    }
+}
+
+dependencies {
+
+    implementation 'com.google.api-client:google-api-client:1.30.9'
+    implementation 'com.google.auth:google-auth-library-oauth2-http:0.20.0'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.security:spring-security-oauth2-client:5.4.5'
+    implementation 'org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.4.4'
+    implementation 'com.google.apis:google-api-services-calendar:v3-rev305-1.23.0'
+
+}
